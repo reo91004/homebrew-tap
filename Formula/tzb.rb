@@ -1,8 +1,8 @@
 class Tzb < Formula
   desc "Two-way sync of PDF highlights and comments between Zotero and Tine"
   homepage "https://github.com/reo91004/tine-zotero"
-  url "https://github.com/reo91004/tine-zotero/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "fbd2d292ce6d7e1001f8b13f4b80827668314421312065ca877a0ca7da5ff838"
+  url "https://github.com/reo91004/tine-zotero/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "24fdc4c4f7408cec0b8792ae49dff9b72ad1aa0d1d342a76f4e332e8cecec585"
   license "AGPL-3.0-only"
 
   depends_on :macos
@@ -11,10 +11,11 @@ class Tzb < Formula
 
   def install
     # Pure-Python package; its only dependency (PyMuPDF) comes from the pymupdf formula.
+    # -P: never put the current directory on sys.path, so a local `tzb/` or `json.py` cannot shadow the install.
     libexec.install "tzb"
     (bin/"tzb").write <<~SH
       #!/bin/sh
-      PYTHONPATH="#{libexec}" exec "#{formula_opt_bin("python@3.14")}/python3.14" -m tzb "$@"
+      PYTHONPATH="#{libexec}" exec "#{formula_opt_bin("python@3.14")}/python3.14" -P -m tzb "$@"
     SH
   end
 
