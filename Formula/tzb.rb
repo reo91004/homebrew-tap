@@ -1,8 +1,8 @@
 class Tzb < Formula
   desc "Two-way sync of PDF highlights and comments between Zotero and Tine"
   homepage "https://github.com/reo91004/tine-zotero"
-  url "https://github.com/reo91004/tine-zotero/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "dfdd5cd569df834af3e7eabee8ecfda10092df15ae2dd7856b5d1cce3e81eba2"
+  url "https://github.com/reo91004/tine-zotero/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "fbd2d292ce6d7e1001f8b13f4b80827668314421312065ca877a0ca7da5ff838"
   license "AGPL-3.0-only"
 
   depends_on :macos
