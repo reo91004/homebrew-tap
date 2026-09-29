@@ -1,5 +1,5 @@
 class Tzb < Formula
-  desc "Two-way sync of PDF highlights, comments, colors and tags between Zotero and Tine"
+  desc "Two-way sync of PDF highlights and comments between Zotero and Tine"
   homepage "https://github.com/reo91004/tine-zotero"
   url "https://github.com/reo91004/tine-zotero/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "dfdd5cd569df834af3e7eabee8ecfda10092df15ae2dd7856b5d1cce3e81eba2"
@@ -14,7 +14,7 @@ class Tzb < Formula
     libexec.install "tzb"
     (bin/"tzb").write <<~SH
       #!/bin/sh
-      PYTHONPATH="#{libexec}" exec "#{Formula["python@3.14"].opt_bin}/python3.14" -m tzb "$@"
+      PYTHONPATH="#{libexec}" exec "#{formula_opt_bin("python@3.14")}/python3.14" -m tzb "$@"
     SH
   end
 
@@ -28,6 +28,6 @@ class Tzb < Formula
 
   test do
     assert_match "two-way sync", shell_output("#{bin}/tzb --help")
-    system Formula["python@3.14"].opt_bin/"python3.14", "-c", "import pymupdf"
+    system formula_opt_bin("python@3.14")/"python3.14", "-c", "import pymupdf"
   end
 end
