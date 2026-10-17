@@ -1,9 +1,9 @@
 cask "usagi-agent" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.5.7"
-  sha256 arm:   "ea25d9d02c553b6f806949295e1122d00b10beed4ee1ea18762ff6d48a0db64d",
-         intel: "67508b893d6a9fdf83ecdc731bd9f41ef222423ad7fedf6e8662ee33fd475273"
+  version "0.6.0"
+  sha256 arm:   "82a1f68aa509e49508e321beacd5e3f5c21e83b744634a968e45f0a1a2b3b0fc",
+         intel: "c594791543d07c700cbc9d3c0dde970560d04a3fe2d649b8e93c23e9c8e2ed9d"
 
   url "https://github.com/reo91004/usagi-agent/releases/download/v#{version}/Usagi-#{version}-#{arch}.dmg"
   name "우사기 비서"
